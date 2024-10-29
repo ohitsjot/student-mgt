@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card card-default rounded-0 shadow ">
+        <div class="card-header">
+            <div class="container">
+                <h2 class="my-4">Instructor Details</h2>
+
+                <!-- Instructor Info Card -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>{{ instructor.name }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Department:</strong> {{ instructor.department.name }}</p>
+                        <p><strong>Status:</strong> {{ instructor.status }}</p>
+                    </div>
+                </div>
+
+                <h3 class="my-4">Subject Taught</h3>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for subject in instructor.subject_set.all %}
+                        <tr>
+                            <td>{{ subject.id }}</td>
+                            <td>{{ subject.name }}</td>
+                            <td>{{ subject.department.name }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center">No subjects assigned to this instructor.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <div class="mt-4">
+                    <a href="{% url 'instructor_update' instructor.id %}" class="btn btn-primary">Edit Instructor</a>
+                    <a href="{% url 'instructor_list' %}" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

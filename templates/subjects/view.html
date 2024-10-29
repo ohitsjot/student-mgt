@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card card-default rounded-0 shadow ">
+        <div class="card-header">
+            <div class="container mt-4">
+                <h2>Subject Details</h2>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>{{ subject.name }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Department:</strong> {{ subject.department.name }}</p>
+                        <p><strong>Instructor:</strong> {{ subject.instructor.name }}</p>
+                        <p><strong>School Level:</strong> {{ subject.school_level }}</p>
+                        <p><strong>School Year:</strong> {{ subject.school_year }}</p>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <a href="{% url 'subject_list' %}" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

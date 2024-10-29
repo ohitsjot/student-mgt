@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Student Management System</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'font-awesome/css/all.min.css' %}">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+        <link href="{% static 'DataTables/datatables.min.css' %}" rel="stylesheet">
+        <link href="{% static 'select2/select2.min.css' %}" rel="stylesheet">
+        <link href="{% static 'sweetalert/sweetalert.css' %}" rel="stylesheet">
+        <link href="{% static 'css/admin_style.css' %}" rel="stylesheet">
+    </head>
+    {% block style %}{% endblock %}
+    <body onload="window.print()">
+        {% block content %}{% endblock %}
+    </body>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'DataTables/datatables.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'font-awesome/js/all.min.js' %}"></script>
+    <script src="{% static 'select2/select2.full.min.js' %}"></script>
+    <script src="{% static 'select2/select2-cascade.js' %}"></script>
+    <script src="{% static 'sweetalert/sweetalert2.all.min.js' %}"></script>
+    <script src="{% static 'js/Chart.min.js' %}"></script>
+
+    <script>
+
+    </script>
+    {% block script %}{% endblock %}
+</html>

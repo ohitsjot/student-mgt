@@ -1,0 +1,44 @@
+{% load static %}
+<style>
+    nav#sidebar {
+        background: #e0e0e0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow:  5px 5px 10px #aaaaaa,
+             -5px -5px 10px #ffffff;
+    }
+
+    .active-link {
+        color: white !important;
+        background-color: #000000ad !important;
+    }
+</style>
+<nav id="sidebar" class='mx-lt-15' >
+    <div class="sidebar-list">
+        <a href="{% url 'dashboard' %}" class="nav-item {% if page == 'dashboard' %}active-link{% endif %}">
+            <span class='icon-field'><i class="fa fa-home"></i></span>
+            Home
+        </a>
+        <a href="{% url 'department_list' %}" class="nav-item {% if page == 'department_list' %}active-link{% endif %}">
+            <span class='icon-field'><i class="fa fa-users"></i></span>
+            Manage Department
+        </a>
+        <a href="{% url 'course_list' %}" class="nav-item {% if page == 'course_list' %}active-link{% endif %}">
+            <span class='icon-field'><i class="fa fa-user-graduate"></i></span>
+            Manage Course
+        </a>
+        <a href="{% url 'instructor_list' %}" class="nav-item {% if page == 'instructor_list' %}active-link{% endif %}">
+            <span class='icon-field'><i class="fa fa-user-tie"></i></span>
+            Manage Instructor
+        </a>
+        <a href="{% url 'student_list' %}" class="nav-item {% if page == 'student_list' %}active-link{% endif %}">
+            <span class='icon-field'><i class="fa fa-user"></i></span>
+            Manage Student
+        </a>
+        <a href="{% url 'subject_list' %}" class="nav-item {% if page == 'subject_list' %}active-link{% endif %}">
+            <span class='icon-field'><i class="fa fa-sharp-duotone fa-book"></i></span>
+            Manage Subject
+        </a>
+    </div>
+</nav>
+

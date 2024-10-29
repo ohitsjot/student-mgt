@@ -1,0 +1,59 @@
+{% extends 'print_layout.html' %}
+{% block content %}
+<center>Class Report</center>
+<table class="table table-borderless table-sm">
+    <thead>
+        <tr>
+            <th colspan="2"></th>
+        </tr>
+        <tr>
+            <th colspan="2"></th>
+        </tr>
+        <tr>
+            <th colspan="2"><h4>Subject Details</h4></th>
+        </tr>
+        <tr>
+            <td>Department: <strong>{{ subject.department.name }}</strong></td>
+            <td>School Year: <strong>{{ subject.school_year }}</strong></td>
+        </tr>
+        <tr>
+            <td>School Level: <strong>{{ subject.school_level }}</strong></td>
+            <td>Subject: <strong>{{ subject.name }}</strong></td>
+        </tr>
+        <tr>
+            <td colspan="2">Instructor: <strong>{{ subject.instructor.name }}</strong></td>
+        </tr>
+    </thead>
+</table>
+<table class="table table-bordered">
+<!--    <colgroup>-->
+<!--        <col width="5%">-->
+<!--        <col width="30%">-->
+<!--        <col width="40%">-->
+<!--        <col width="25%">-->
+<!--    </colgroup>-->
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for student in subject.students.all %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ student.student_id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.course.name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

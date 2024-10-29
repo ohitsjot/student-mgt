@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block style %}
+<style>
+    .card-icon {
+        font-size: 40px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid px-5 py-3">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card card-body" style="color: #ec7063;">
+                <h4><b>Department</b></h4><hr>
+                <div class="d-flex justify-content-between">
+                    <i class="fa fa-solid fa-users card-icon"></i>
+                    <h4 class="float-right"><b>{{ department_count }}</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card card-body" style="color: #a569bd;">
+                <h4><b>Courses</b></h4><hr>
+                <div class="d-flex justify-content-between">
+                    <i class="fa fa-solid fa-user-graduate card-icon"></i>
+                    <h4 class="float-right"><b>{{ courses_count }}</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card card-body" style="color: #5dade2;">
+                <h4><b>Instructors</b></h4><hr>
+                <div class="d-flex justify-content-between">
+                    <i class="fa fa-solid fa-user-tie card-icon"></i>
+                    <h4 class="float-right"><b>{{ instructors_count }}</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card card-body" style="color: #45b39d;">
+                <h4><b>Students</b></h4><hr>
+                <div class="d-flex justify-content-between">
+                    <i class="fa fa-solid fa-user card-icon"></i>
+                    <h4 class="float-right"><b>{{ students_count }}</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card card-body" style="color: #dc7633;">
+                <h4><b>Subjects</b></h4><hr>
+                <div class="d-flex justify-content-between">
+                    <i class="fa fa-sharp-duotone fa-solid fa-book card-icon"></i>
+                    <h4 class="float-right"><b>{{ subjects_count }}</b></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+
+{% endblock %}
